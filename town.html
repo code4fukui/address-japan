@@ -34,6 +34,7 @@ const param = new URLSearchParams(document.location.search.substring(1));
 const fn = param.get("fn") || "180009/182095/town.csv";
 const pref = param.get("pref") || "福井県";
 const city = param.get("city") || "越前市";
+document.title = pref + city + "の" + document.title;
 
 spanpref.textContent = pref;
 spancity.textContent = city;
