@@ -7,4 +7,5 @@ const bin = await fetchZip(prefurl);
 await Deno.writeFile("data/pref.csv", bin);
 const txt = new TextDecoder().decode(bin);
 const json = CSV.toJSON(CSV.decode(txt));
+await Deno.writeTextFile("data/pref.json", JSON.stringify(json, null, "\t"));
 console.log(json);
