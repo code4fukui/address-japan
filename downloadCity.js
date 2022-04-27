@@ -1,7 +1,7 @@
 import { CSV } from "https://js.sabae.cc/CSV.js";
 import { CKAN } from "./CKAN.js";
 import { fetchZip } from "./fetchZip.js";
-import { mkdirs } from "./makeDirs.js";
+import { makeDirs } from "./makeDirs.js";
 
 const json = CSV.toJSON(await CSV.fetch("data/pref.csv"));
 console.log(json);
