@@ -11,5 +11,5 @@ $ deno run -A https://code4fukui.github.io/address-japan/downloadAll.js
 
 ## サンプルアプリ
 
-[日本の市区町村+町字ID](https://code4fukui.github.io/address-japan/)
+[日本の市区町村+町字ID](https://code4fukui.github.io/address-japan/city.html)
 
