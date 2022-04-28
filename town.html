@@ -27,13 +27,14 @@ footer {
 <div id=main></div>
 
 <script type="module">
-//import { CSVViewer } from "https://code4sabae.github.io/js/csv-viewer.js";
-import { CSVViewer } from "./csv-viewer.js";
+import { CSVViewer } from "https://code4sabae.github.io/js/csv-viewer.js";
+//import { CSVViewer } from "./csv-viewer.js";
 
 const param = new URLSearchParams(document.location.search.substring(1));
 const fn = param.get("fn") || "180009/182095/town.csv";
 const pref = param.get("pref") || "福井県";
 const city = param.get("city") || "越前市";
+const q = param.get("q") || "";
 document.title = pref + city + "の" + document.title;
 
 spanpref.textContent = pref;
@@ -41,6 +42,7 @@ spancity.textContent = city;
 const cv = new CSVViewer({
   src: "./data/" + fn,
   name: "町字マスター（出典：ベースレジストリ）",
+  q,
 });
 main.appendChild(cv);
 </script>

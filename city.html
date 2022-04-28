@@ -31,6 +31,9 @@ footer {
 import { CSV } from "https://js.sabae.cc/CSV.js";
 
 onload = async () => {
+  const param = new URLSearchParams(document.location.search.substring(1));
+  const q = param.get("q") || "";
+
   const prefs = CSV.toJSON(await CSV.fetch("data/pref.csv"));
 
   const init = () => {
@@ -50,6 +53,9 @@ onload = async () => {
       const url = `./town.html?fn=${pcode}/${ccode}/town.csv&pref=${pref}&city=${city}`;
       tds[1].innerHTML = `<a href=${url}>${ccode}</a>`;
     });
+    const inp = document.body.querySelector("csv-viewer input");
+    inp.value = q;
+    inp.onchange();
   };
   setInterval(init, 100);
 };
