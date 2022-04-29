@@ -34,6 +34,7 @@ onload = async () => {
   const param = new URLSearchParams(document.location.search.substring(1));
   const q = param.get("q") || "";
 
+  let flg = false;
   const prefs = CSV.toJSON(await CSV.fetch("data/pref.csv"));
 
   const init = () => {
@@ -52,10 +53,13 @@ onload = async () => {
       const city = tds[8].textContent ;// "越前市";
       const url = `./town.html?fn=${pcode}/${ccode}/town.csv&pref=${pref}&city=${city}`;
       tds[1].innerHTML = `<a href=${url}>${ccode}</a>`;
+      flg = true;
     });
-    const inp = document.body.querySelector("csv-viewer input");
-    inp.value = q;
-    inp.onchange();
+    if (!flg) {
+      const inp = document.body.querySelector("csv-viewer input");
+      inp.value = q;
+      inp.onchange();
+    }
   };
   setInterval(init, 100);
 };
