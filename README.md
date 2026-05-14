@@ -1,19 +1,20 @@
 # address-japan
 
-日本の都道府県、市区町村、町字全件をCSVファイルとしてダウンロード
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-setup [Deno](https://deno.land/)
+Download the full set of Japanese prefectures, municipalities, and addresses as CSV files.
 
+## Requirements
+[Deno](https://deno.land/)
+
+## Usage
 ```
 $ mkdir data
 $ deno run -A https://code4fukui.github.io/address-japan/downloadAll.js
 ```
 
-## data source
+## Data / API
+Source: [Address Base Registry (Municipal Master Data)](https://www.digital.go.jp/news/KgQ8ac8h/) [Base Registry Data Catalog Site](https://registry-catalog.registries.digital.go.jp/dataset/o1-000000_g2-000002) (Accessed on April 26, 2022)
 
-出典： [アドレス・ベース・レジストリ（市区町村マスターデータ）](https://www.digital.go.jp/news/KgQ8ac8h/) [ベース・レジストリ データカタログサイト](https://registry-catalog.registries.digital.go.jp/dataset/o1-000000_g2-000002) （2022年4月26日取得）
-
-## サンプルアプリ
-
-[日本の市区町村+町字ID](https://code4fukui.github.io/address-japan/city.html)
-
+## License
+MIT License — see [LICENSE](LICENSE).
